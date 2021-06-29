@@ -2,7 +2,7 @@
 function loadCheat(config) {
 	if(!config[location.href]) return;
 	const libcheat = document.createElement('script');
-	libcheat.src = chrome.extension.getURL('libcheat.js');
+	libcheat.src = chrome.extension.getURL('lib/latest/main.js');
 	(document.head || document.documentElement).appendChild(libcheat);
 
 	const s = document.createElement('script');

@@ -13,7 +13,7 @@
 	}],
 	"web_accessible_resources": [
 		"cheats/*",
-		"libcheat.js",
+		"lib/latest/main.js",
 		"html/popup.html"
 	],
 	"manifest_version": 2
