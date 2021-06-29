@@ -13,3 +13,6 @@ Then open the game and hit the button for the extension in the top left corner.
 
 Check out [this game](https://spotky1004.com/Calculator-Evolution/) to see it in
 action.
+
+
+const { libcheat } = await import('https://hydroflame.github.io/ext_cheat/lib/latest/main.js');
