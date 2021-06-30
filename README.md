@@ -2,14 +2,14 @@
 
 # libcheat / extcheat
 
-- [Introduction](##Introduction)
-- [Documentation](##Documentation)
-	- [task](###task)
-	- [toggleable](###toggleable)
-	- [button](###button)
-	- [watch](###watch)
-	- [parametric](###parametric)
-	- [slowdown](###slowdown)
+- [Introduction](#Introduction)
+- [Documentation](#Documentation)
+	- [task](#task)
+	- [toggleable](#toggleable)
+	- [button](#button)
+	- [watch](#watch)
+	- [parametric](#parametric)
+	- [slowdown](#slowdown)
 
 ## Introduction
 
