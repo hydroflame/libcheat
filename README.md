@@ -179,8 +179,28 @@ Number of milliseconds to reach before calling f.
 
 extcheat is a Chrome extension that will load cheat scripts automatically instead
 of having to paste the script every time you load the page. It is however a
-little difficult to use.
+little difficult to use. ext_cheat cannot be an extension on the chrome app store
+because it does require you to modify **some** files in it.
 
 ## Installation
 
 ![installation](doc/installation.png)
+
+Download the files in this repo and naviguate to `chrome://extensions`, enable
+developer mode and hit `Load unpacked`. Then naviguate to this repo and open
+`Chrome/manifest.json`. You're done the installation!
+
+You should already have access to some of my script since I store them in this
+repo.
+
+To add your own you first need to create a `.js` file in the `cheats` folder.
+This file will contain the same code as if you were importing libcheat directly
+but you can avoid the `import` line as it is done automatically.
+
+Once you have a new cheat file you just need to add an entry to
+`cheats/config.json`. This file contains a map of URL => file to use for that URL.
+
+![activate](doc/activate.png)
+
+You may need to activate the extension the first time you load the page with a
+new script. Just click the icon in the taskbar.

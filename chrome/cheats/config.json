@@ -1,6 +1,7 @@
 {
-	"https://spotky1004.com/Calculator-Evolution/": "calc.js",
-	"https://kingbecks123.github.io/Sublime/": "lime.js",
-	"https://sciencecrafter.github.io/one-potato-incremental/": "potato.js",
-	"https://pseudo-corp.github.io/SynergismOfficial/": "synergism.js"
+	"https://spotky1004.com/Calculator-Evolution/": "calculator-evolution.js",
+	"https://kingbecks123.github.io/Sublime/": "sublime.js",
+	"https://sciencecrafter.github.io/one-potato-incremental/": "potato_incremental.js",
+	"https://pseudo-corp.github.io/SynergismOfficial/": "synergism.js",
+	"https://www.decisionproblem.com/paperclips/index2.html": "universal-paperclip.js"
 }
