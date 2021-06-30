@@ -19,13 +19,14 @@ const libcheat = {
 		tasks.push(f);
 	},
 	// Add a toggleable task.
-	toggleable: (f, label) => {
+	toggleable: (f, label, def = false) => {
 		const div = document.getElementById(uidivid);
 		const box = document.createElement('input');
 		const text = document.createElement('span');
 		text.style.color = '#66FF33';
 		text.innerText = label;
 		box.setAttribute("type", "checkbox");
+		box.checked = def;
 		div.appendChild(box);
 		div.appendChild(text);
 		div.appendChild(document.createElement('br'));
