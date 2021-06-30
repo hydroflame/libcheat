@@ -108,7 +108,25 @@ button is pressed is directly available.
 
 ![direct_js](doc/direct_js.png)
 
+From this we know when that button is called the javascript `clipClick(1)` is
+executed and so we can add the following line to our script.
+
+	libcheat.task(() => clipClick(1));
+
+or
+
+	libcheat.toggleable(() => clipClick(1), 'make paperclips');
+
+When the js isn't available you may be able to refer to an element by it'd html id. Like this.
+
 ![direct_id](doc/direct_id.png)
+
+We could add the following line to our script and have the same effect.
+
+	libcheat.task(() => document.getElementById('btnMakePaperclip').click());
+
+For more complex element selection see `querySelector` or `getElementsByClassName`.
+
 
 ## Documentation
 
