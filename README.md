@@ -1,18 +1,110 @@
-# ext_cheat
+# WARNING: libcheat on its own will not cause any problem. However if you're using it in conjunction with the code of someone with malicious intent it would be a security flaw. Please make sure you know what it is you're doing before using it.
 
-This is a chrome extension that helps script html based games. Due to the nature
-of the extension is needs to be installed with developper mode on, if you're
-likely to make changes anyway.
+# libcheat / extcheat
 
-To enable it you first need to create a cheat file under the `cheats/` folder.
-Then you need to add an entry in `cheats/config.json`.
+- [Introduction](##Introduction)
+- [Documentation](##Documentation)
+	- [task](###task)
+	- [toggleable](###toggleable)
+	- [button](###button)
+	- [watch](###watch)
+	- [parametric](###parametric)
+	- [slowdown](###slowdown)
 
-Then you need to reload the extension at `chrome://extensions`. 
+## Introduction
 
-Then open the game and hit the button for the extension in the top left corner.
+libcheat is a library you can import in your console to help play (cheat) html games.
 
-Check out [this game](https://spotky1004.com/Calculator-Evolution/) to see it in
-action.
+It does require knowledge of programming to use efficiently. However it was built in such a way that it's easy to share your cheats with others.
+
+It is recommended you use extcheat as it aleviates some of the tedious aspect of using libcheat but libcheat is is available directly.
+
+The core idea of libcheat is to import a utility script in the game to help automate some tasks (or outright cheat).
+
+The first line of your cheat script will often be the following:
+
+	let { libcheat } = await import('https://hydroflame.github.io/libcheat/lib/latest/main.js');
+
+This will import libcheat latest version, you can also import older versions by replacing `latest` with whatever version you like.
+
+Importing this will automatically a UI that helps control your cheats.
+
+The main gimmick is that this auto sets up a scheduler every 50 ms (not configurable) that will run all your tasks.
+
+We will take [universal paperclip](https://www.decisionproblem.com/paperclips/index2.html) as an example:
+
+Let's say we want to press the "Make paperclip" button.
+
+	libcheat.task(() => clipClick(1));
+
+This will click the button every 50ms.
+
+That's great but you may want to be able to disable this sometimes. We will use `toggleable` instead.
+
+	libcheat.toggleable(() => clipClick(1), 'make paperclip');
+
+That will add a checkbox on the ui with the label `make paperclip`. When that checkbox is checked the task will be executed.
+
+Now we want to setup a skill tree in [calculator evolution](https://spotky1004.com/Calculator-Evolution/). We know we need to buy 5 skills for this one.
+
+This isn't a task we want executed every 50ms. Only when we click it. So we can use `button`
+
+	libcheat.button(() => {
+		buyQuantumUpgrade(5);
+		buyQuantumUpgrade(2);
+		buyQuantumUpgrade(3);
+	}, 'setup skill tree');
+
+This adds a button on the cheat ui, when clicked that function is executed.
+
+Now I want to automatically ascend for 1e5x more resources than I had before (in an unnamed game). But not always exactly 1e5, sometimes more or sometimes less. So I want a field that I can change.
+
+	libcheat.parametric(v => {
+		if(game.points.mul(v) < calcAscensionGain()) ascend();
+	}, 'auto ascension');
+
+This will add a label and a field on the UI, the first argument of the function is the value of the field. (be careful about validating that value.
+
+Finally sometimes we just want to be able to see a value that isn't exposed to the user. We can use `watch`
+
+	libcheat.watch(() => {
+		return "ascend for: " + calcAscensionGain();
+	});
+
+This one is special because it's the only one that returns a value.
+
+## Documentation
+
+### task(f)
+Add a task to the schedule executed every frame.
+#### f: () => void
+function takes no arguments and returns nothing, executed every frame.
+
+### toggleable(task, label, default=false)
+Add a task to the schedule executed every frame if a checkbox is checked.
+#### task: () => void
+function takes no arguments and returns nothing, executed every frame.
+#### label: string
+label of the checkbox associated with this task.
+#### default: boolean
+If true this task will start as active.
 
 
-const { libcheat } = await import('https://hydroflame.github.io/ext_cheat/lib/latest/main.js');
+## button(f, label)
+Add a button to the cheat ui.
+### f: () =>void
+function to execute when the button is pressed.
+### label: string
+label of the button.
+
+## watch(f)
+Add an auto-updating value to the cheat ui.
+### watcher: () => any
+function returns the value to watch.
+
+## parametric(f, label)
+Add a task to the scheduler that is fed the value of a text field from the cheat ui. Careful there is no validation on this value.
+### task: (value: any) => void
+function that will be called with the value of the text field.
+### label: string
+label of the text field.

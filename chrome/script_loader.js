@@ -19,7 +19,7 @@ function loadLib(config) {
 	// Create a new script element and load main libcheat in it.
 	const libcheat = document.createElement('script');
 	// the filename is hardcoded and comes with the extension.
-	libcheat.onload = loadCheat;
+	libcheat.onload = () => loadCheat(config);
 	libcheat.src = chrome.extension.getURL('main.js');
 	(document.head || document.documentElement).appendChild(libcheat);
 }

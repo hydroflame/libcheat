@@ -1,6 +1,6 @@
 {
 	"name": "ext_cheat",
-	"version": "1",
+	"version": "1.0",
 	"description": "ext_cheat is an extension that helps cheat in online html games.",
 	"permissions": [
 		"tabs",
@@ -16,5 +16,8 @@
 		"main.js",
 		"html/popup.html"
 	],
+	"icons": {
+		"128": "128.png"
+	},
 	"manifest_version": 2
 }
