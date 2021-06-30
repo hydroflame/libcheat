@@ -89,22 +89,29 @@ label of the checkbox associated with this task.
 #### default: boolean
 If true this task will start as active.
 
-
-## button(f, label)
+### button(f, label)
 Add a button to the cheat ui.
-### f: () =>void
+#### f: () =>void
 function to execute when the button is pressed.
-### label: string
+#### label: string
 label of the button.
 
-## watch(f)
+### watch(f)
 Add an auto-updating value to the cheat ui.
-### watcher: () => any
+#### watcher: () => any
 function returns the value to watch.
 
-## parametric(f, label)
+### parametric(f, label)
 Add a task to the scheduler that is fed the value of a text field from the cheat ui. Careful there is no validation on this value.
-### task: (value: any) => void
+#### f: (value: any) => void
 function that will be called with the value of the text field.
-### label: string
+#### label: string
 label of the text field.
+
+### slowdown(f, ms)
+Creates a new function that will only be called once the time counter reaches
+`ms`. This isn't very accurate but helps slow down tasks with heavy calculations.
+#### f: (value: any) => void
+function to be called every `ms`.
+#### ms: number
+Number of milliseconds to reach before calling f.
