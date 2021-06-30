@@ -1,5 +1,5 @@
-libcheat.addTask(()=>[0, 1, 2, 3, 4, 5, 6, 7].forEach(x => researchBuy(x)), true, 'auto research');
-libcheat.addTask(()=>[0, 1, 2, 3, 4, 5].forEach(x => shopBuy(x)), true, 'auto shop');
+libcheat.toggleable(()=>[0, 1, 2, 3, 4, 5, 6, 7].forEach(x => researchBuy(x)), 'auto research');
+libcheat.toggleable(()=>[0, 1, 2, 3, 4, 5].forEach(x => shopBuy(x)), 'auto shop');
 
 function atMaxBase() {
 	return game.base.eq(calcMaxBase());
@@ -76,7 +76,7 @@ function replaceSing(i) {
 	game.singularityGrid["02"].rotate = 3;
 }
 
-libcheat.addTask(function() {
+libcheat.toggleable(function() {
 	if(calcMultiProcess()<5) {
 		if(!game.programActive[0]) activeProgram(0);
 		if(atMaxNumber() && !atMaxDigit() && !game.programActive[2]) activeProgram(2);
@@ -91,26 +91,26 @@ libcheat.addTask(function() {
 	}
 
 	game.base.pow(game.digits).sub(game.number).lessThanOrEqualTo(1)
-}, true, 'smart process');
+}, 'smart process');
 
-libcheat.addTask(function() {
+libcheat.toggleable(function() {
 	quantum()
-}, true, 'smart quantum');
-libcheat.addTask(function() {
+}, 'smart quantum');
+libcheat.toggleable(function() {
 	singularity()
-}, true, 'auto singularity');
+}, 'auto singularity');
 
-libcheat.addTask(function() {
+libcheat.toggleable(function() {
 	const rp = game.researchPoint.eq(0)?D(1):game.researchPoint
 	if(rp.mul(1e5).lt(calcRPGain())) safeReboot();
 	if(game.durability.lt(0.5)) safeReboot();
-}, true, 'smart reboot');
+}, 'smart reboot');
 
-libcheat.addButton(safeReboot, 'reboot');
+libcheat.button(safeReboot, 'reboot');
 
-libcheat.addButton(forceRespect, 'respect');
+libcheat.button(forceRespect, 'respect');
 
-libcheat.addButton(function() {
+libcheat.button(function() {
 	forceRespect();
 	const extra = [35, 34, 33, 32, 31, 21, 11, 41, 51, 52, 42, 22, 12, 53, 43, 23, 13, 54, 44, 24, 14, 55, 45, 25, 15, 46, 56, 36, 26, 16, 71];
 	for(const upg of extra) buyQuantumUpgrade(convertIdx(upg));
@@ -147,7 +147,7 @@ const qlabsSetups = [
 	[36, 26, 16, 15, 25, 24, 14, 13, 23, 22, 12, 11, 21, 32],
 ];
 
-libcheat.addButton(function() {
+libcheat.button(function() {
 	autoSetup(qlabsSetups);
 	const extra = [42, 43, 44, 45, 35, 34, 33, 31, 41, 51, 52, 53, 54, 55, 46, 56, 71, 37, 27, 17, 75];
 	for(const upg of extra) {
@@ -157,5 +157,5 @@ libcheat.addButton(function() {
 
 const boosts = ["base","digit","money","rp","rspeed","speed", 'qubits'];
 for(let i = 0; i < boosts.length; i++) {
-	libcheat.addButton(()=> replaceSing(i), boosts[i]);
+	libcheat.button(()=> replaceSing(i), boosts[i]);
 }

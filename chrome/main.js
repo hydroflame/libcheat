@@ -13,7 +13,7 @@ const waitTime = 50;
 setInterval(() => tasks.forEach(task => task()), waitTime);
 
 // Create the actual libcheat object.
-export const libcheat = {
+const libcheat = {
 	// Add a task always executed.
 	task: (f) => {
 		tasks.push(f);

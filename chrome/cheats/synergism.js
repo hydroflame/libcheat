@@ -2,7 +2,7 @@ function idClick(s) {
 	document.getElementById(s).click();
 }
 
-libcheat.addTask(()=>{
+libcheat.toggleable(()=>{
 	for(let i = 1; i <= 12; i++)
 		idClick('antUpgrade'+i);
 	for(let i = 1; i <= 10; i++)
@@ -11,4 +11,4 @@ libcheat.addTask(()=>{
 	idClick('useofferingpotion');
 	idClick('buyobtainiumpotion');
 	idClick('useobtainiumpotion');
-}, true, 'auto everything');
+}, 'auto everything');

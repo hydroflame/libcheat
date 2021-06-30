@@ -1,0 +1,14 @@
+libcheat.toggleable(plant, 'auto plant');
+libcheat.toggleable(harvest, 'auto harvest');
+libcheat.toggleable(makeSeeds, 'auto make seed');
+libcheat.toggleable(sellPotato, 'auto sell');
+libcheat.toggleable(seedResearch, 'auto research');
+libcheat.toggleable(seedUpgrade, 'auto seed upgrade');
+libcheat.toggleable(speedUpgrade, 'auto speed upgrade');
+libcheat.toggleable(makeBakedPotato, 'auto bake');
+libcheat.toggleable(makeFries, 'auto fries');
+libcheat.toggleable(eatFood, 'auto eat');
+libcheat.toggleable(sellFood, 'auto sell food');
+libcheat.toggleable(seedResearchMax, 'auto max research');
+libcheat.toggleable(potatoStudy, 'auto study');
+libcheat.toggleable(buyFertilizer, 'auto fertilizer');

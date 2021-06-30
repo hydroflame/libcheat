@@ -8,12 +8,12 @@
 	],
 	"content_scripts": [{
 			"matches": ["*://*/*"],
-			"js": ["contentscript.js"],
+			"js": ["script_loader.js"],
 			"run_at": "document_end"
 	}],
 	"web_accessible_resources": [
 		"cheats/*",
-		"lib/latest/main.js",
+		"main.js",
 		"html/popup.html"
 	],
 	"manifest_version": 2
