@@ -106,9 +106,9 @@ to use it before moving on.
 The first one is simple, sometimes the javascript function that is called when a
 button is pressed is directly available.
 
-![direct_js](doc/direct_js/png)
+![direct_js](doc/direct_js.png)
 
-![direct_id](doc/direct_id/png)
+![direct_id](doc/direct_id.png)
 
 ## Documentation
 
