@@ -3,6 +3,7 @@
 # libcheat / extcheat
 
 - [Introduction](#Introduction)
+- [How to automate tasks](#How-to-automate-tasks)
 - [Documentation](#Documentation)
 	- [task](#task)
 	- [toggleable](#toggleable)
@@ -93,6 +94,8 @@ Here's an example of a starter script for [universal paperclip](https://www.deci
 	libcheat.button(() => {
 		wire += 10000;
 	}, 'add 1e4 wire');
+
+## How to automate tasks
 
 
 ## Documentation
