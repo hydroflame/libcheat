@@ -95,6 +95,9 @@ Here's an example of a starter script for [universal paperclip](https://www.deci
 		wire += 10000;
 	}, 'add 1e4 wire');
 
+Every time you load the page you have to open the dev console and paste this in
+for the cheats to take effect. ext_cheat can help make this less tedious.
+
 ## How to automate tasks
 
 There are several ways that you can gain access to the necessary code or
@@ -174,3 +177,10 @@ Number of milliseconds to reach before calling f.
 
 # extcheat
 
+extcheat is a Chrome extension that will load cheat scripts automatically instead
+of having to paste the script every time you load the page. It is however a
+little difficult to use.
+
+## Installation
+
+![installation](doc/installation.png)
