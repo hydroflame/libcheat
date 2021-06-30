@@ -10,6 +10,7 @@
 	- [watch](#watch)
 	- [parametric](#parametric)
 	- [slowdown](#slowdown)
+- [extcheat](#extcheat)
 
 ## Introduction
 
@@ -73,6 +74,27 @@ Finally sometimes we just want to be able to see a value that isn't exposed to t
 
 This one is special because it's the only one that returns a value.
 
+Here's an example of a starter script for [universal paperclip](https://www.decisionproblem.com/paperclips/index2.html):
+
+	let { libcheat } = await import('https://hydroflame.github.io/libcheat/lib/latest/main.js');
+
+	// Always make paperclips.
+	libcheat.task(()=>clipClick(1));
+
+	// Toggleable task to automatically buy wire when we have none.
+	libcheat.toggleable(() => {
+		if(wire < 1) buyWire();
+	}, 'smart buy wire');
+
+	// Toggleable task to automatically buy clippers.
+	libcheat.toggleable(makeClipper, 'auto buy clipper');
+
+	// This is an actual cheat, you should not be able to get 1000 free wire.
+	libcheat.button(() => {
+		wire += 10000;
+	}, 'add 1e4 wire');
+
+
 ## Documentation
 
 ### task(f)
@@ -115,3 +137,7 @@ Creates a new function that will only be called once the time counter reaches
 function to be called every `ms`.
 #### ms: number
 Number of milliseconds to reach before calling f.
+
+
+# extcheat
+
