@@ -17,7 +17,7 @@
 
 libcheat is a library you can import in your console to help play (cheat) html games.
 
-It does require knowledge of programming to use efficiently. However it was built in such a way that it's easy to share your cheats with others.
+It does require knowledge of programming and html to use efficiently. However it was built in such a way that it's easy to share your cheats with others.
 
 It is recommended you use extcheat as it aleviates some of the tedious aspect of using libcheat but libcheat is is available directly.
 
@@ -97,6 +97,18 @@ Here's an example of a starter script for [universal paperclip](https://www.deci
 
 ## How to automate tasks
 
+There are several ways that you can gain access to the necessary code or
+elements required to automate your tasks.
+
+We will make heavy use of the inspect tool in this section. You should know how
+to use it before moving on.
+
+The first one is simple, sometimes the javascript function that is called when a
+button is pressed is directly available.
+
+![direct_js](/doc/direct_js/png)
+
+![direct_id](/doc/direct_id/png)
 
 ## Documentation
 
