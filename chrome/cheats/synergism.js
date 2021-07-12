@@ -20,3 +20,8 @@ libcheat.button(() => {
 	// We need to force reload.
 	location.reload();
 }, '+1e99 quarks');
+
+libcheat.button(() => {
+	for(let i = 1; i <= 7; i++)
+		idClick('buyTalismanItem'+i);
+}, 'buy all shards');

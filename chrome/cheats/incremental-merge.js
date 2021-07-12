@@ -1,0 +1,1 @@
+libcheat.task(mergeAll);
