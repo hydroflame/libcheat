@@ -1,0 +1,1 @@
+libcheat.task(()=>document.getElementById('main-canvas').click());

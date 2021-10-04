@@ -9,6 +9,7 @@ function atMaxDigit() {
 	return game.digits.eq(calcMaxDigit());
 }
 
+
 function atMaxNumber() {
 	return game.base.pow(game.digits).sub(game.number).lessThanOrEqualTo(1);
 }
@@ -80,7 +81,7 @@ libcheat.toggleable(function() {
 	if(calcMultiProcess()<5) {
 		if(!game.programActive[0]) activeProgram(0);
 		if(atMaxNumber() && !atMaxDigit() && !game.programActive[2]) activeProgram(2);
-		if(atMaxDigit() && !atMaxBase() && !game.programActive[3]) activeProgram(3);
+		if(atMaxDigit() && !atMaxBase() && atMaxNumber() && !game.programActive[3]) activeProgram(3);
 		if(atMaxDigit() && atMaxBase() && atMaxNumber() && !game.programActive[1]) activeProgram(1);
 		if(game.money.mul(1e5).lt(calcMoneyGain()) && !game.programActive[1]) activeProgram(1);
 	} else {
