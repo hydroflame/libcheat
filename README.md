@@ -130,6 +130,14 @@ We could add the following line to our script and have the same effect.
 
 For more complex element selection see `querySelector` or `getElementsByClassName`.
 
+### slowdown
+
+The lib executes all tasks every 50ms. If that's too fast you can use slowdown
+
+	libcheat.task(libcheat.slowdown(()=>clipClick(1), 1000))
+	
+This will execute that task only every 1000ms.
+
 
 ## Documentation
 
